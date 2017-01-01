@@ -1,14 +1,2 @@
-#this is done from terminal on Macbook air
 
-#to enter into python in terminal
-$ python
 
-#used to verify version of python and that MySQLdb module is installed
-
->>>import sys
-
-#shows python version
->>>sys.version
-
-#allows you to begin writing database-access scripts
->>>import MYSQLdb
