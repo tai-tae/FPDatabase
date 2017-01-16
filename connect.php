@@ -50,7 +50,7 @@
 
 
 <?php
-$con = mysql_connect("localhost","root","MCraptor18");
+$con = mysql_connect("localhost","xxxxx","xxxxx");
 if (!$con)
   {
   die('Could not connect: ' . mysql_error());
