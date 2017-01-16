@@ -42,38 +42,34 @@
         </table>
       </form>
     </center>
-  </body>
-</html>
+
+
 
 
 
 
 
 <?php
-error_reporting(E_ALL ^ E_DEPRECATED);
-
-
-$link = mysqli_connect('localhost', 'xxxxx', 'xxxxxxx', 'xxxxxx');
-
-if(isset($_POST['submit'])){
-
-  $first_name = $_POST['first_name'];
-  $last_name = $_POST['last_name'];
-  $mcid = $_POST['mcid'];
-  $email = $_POST['email'];
-
-
-  $query = "insert into data (first_name,last_name,mcid,email,e_notif) values ('$first_name','$last_name','$mcid','$email')";
-  mysqli_query($link, 'CREATE TEMPORARY TABLE `table`');
-
-
-
+$con = mysql_connect("localhost","root","MCraptor18");
+if (!$con)
   {
-    echo "Student's data entered successfulle!";
+  die('Could not connect: ' . mysql_error());
   }
 
+mysql_select_db("cyberclubsu", $con);
 
-}
+$sql="INSERT INTO data (first_name, last_name, mcid, email)
+VALUES
+('$_POST[first_name]','$_POST[last_name]','$_POST[mcid]','$_POST[email]')";
 
+if (!mysql_query($sql,$con))
+  {
+  die('Error: ' . mysql_error());
+  }
+echo "1 record added";
 
+mysql_close($con)
 ?>
+
+</body>
+</html>
