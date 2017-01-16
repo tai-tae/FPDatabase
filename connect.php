@@ -53,7 +53,7 @@
 error_reporting(E_ALL ^ E_DEPRECATED);
 
 
-$link = mysqli_connect('localhost', 'root', 'MCraptor18', 'cyberclubsu');
+$link = mysqli_connect('localhost', 'xxxxx', 'xxxxxxx', 'xxxxxx');
 
 if(isset($_POST['submit'])){
 
